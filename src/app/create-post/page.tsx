@@ -1,12 +1,7 @@
 import { createPost } from "@/actions/actions";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default async function Page() {
-    const { isAuthenticated } = getKindeServerSession();
-    if (!(await isAuthenticated())) {
-        redirect('/api/auth/login?redirect=/create-post')
-    }
 
     return (
         <main className="text-center pt-16 px-5">
@@ -22,6 +17,7 @@ export default async function Page() {
                     className="border rounded px-3 h-full" />
                 <button className="h-full bg-blue-500 px-5 rounded text-white">Submit</button>
             </form>
+            <LogoutLink className="h-10 space-x-2 bg-black px-5 rounded text-white">Log out</LogoutLink>
         </main>
     );
 }
