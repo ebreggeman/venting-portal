@@ -8,16 +8,27 @@ export default async function Page() {
             <h1 className="text-4xl md:text-5xl font-bold mb-5">Create Post</h1>
             <form
                 action={createPost}
-                className="h-10 space-x-2 mt-10">
+                className="flex flex-col max-w-[600px] mx-auto gap-2 my-10">
                 <input
                     type="text"
                     name="title"
-                    placeholder="Title for new post"
+                    placeholder="Title of your vent"
+                    className="border rounded px-3 h-10"
+                    required
+                />
 
-                    className="border rounded px-3 h-full" />
-                <button className="h-full bg-blue-500 px-5 rounded text-white">Submit</button>
+                <textarea
+                    name="body"
+                    placeholder="Enter your vent here"
+                    className="border rounded px-3 py-2"
+                    rows={6}
+                />
+
             </form>
-            <LogoutLink className="h-10 space-x-2 bg-black px-5 rounded text-white">Log out</LogoutLink>
+            <div className="flex flex-col mx-auto max-w-[200px] gap-4 text-center">
+                <button className="h-10 bg-blue-500 px-5 rounded text-white">Submit</button>
+                <LogoutLink className="h-10 px-5 rounded text-black">Log out</LogoutLink>
+            </div>
         </main>
     );
 }
