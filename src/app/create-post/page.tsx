@@ -1,5 +1,4 @@
 import { createPost } from '@/actions/actions';
-import React from 'react'
 
 export default function page() {
     return (
