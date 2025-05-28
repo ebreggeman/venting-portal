@@ -23,12 +23,11 @@ export default async function Page() {
                     className="border rounded px-3 py-2"
                     rows={6}
                 />
-
+                <div className="flex flex-col mx-auto max-w-[200px] gap-3 text-center">
+                    <button className="h-10 bg-blue-500 px-5 rounded text-white">Submit</button>
+                </div>
             </form>
-            <div className="flex flex-col mx-auto max-w-[200px] gap-4 text-center">
-                <button className="h-10 bg-blue-500 px-5 rounded text-white">Submit</button>
-                <LogoutLink className="h-10 px-5 rounded text-black">Log out</LogoutLink>
-            </div>
-        </main>
+            <LogoutLink className="h-10 px-5 rounded text-black">Log out</LogoutLink>
+        </main >
     );
 }
