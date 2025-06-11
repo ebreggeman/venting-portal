@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+How I built this:
 
-## Getting Started
+1. Install Next.js in project in VS code
+    - "npx create-next-app@latest" to get install latest version
+        - Y to typescript, ESlint, Tailwind CSS, src directory, app router
+        - N to import alias
 
-First, run the development server:
+2. Remove majority of text from root page.tsx  
+    - only leave "export default function Home() {
+        return (
+            <main>
+            </main>
+        );
+    }"      
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. Create "Posts" page
+    - Create by adding new folder in "src" named "posts"
+    - Add page.tsx within "posts" folder
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Customize style in layout.tsx
+    - Create template literal with inter.className using tailwindcss pallets 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+5. Separate "src" and "app" folders, so components in "app" are children of "src"
+    - Add separate components folder within app folder
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+6. Created header.tsx with menu within "components" folder
+    - Add logo using image within "public" folder
+        - Use <Image> component from Next.js
+        - Specify width and height
+        - Add link to logo to home page
+    - Add <nav>
+        - map out at top of header.tsx
+        - use navLinks.map
+    - Add styling using flexbox for layout
+    - Add styling so selected link is darker color in nav menu
+        - "usePathname();
+        - Convert to client component 
 
-## Learn More
+7. Created footer.tsx with copyright symbol
+    - &copy;
+    - Add styling using flexbox
+        - flex-col for vertical flow
+        - min-h-screen
 
-To learn more about Next.js, take a look at the following resources:
+8. Add container to constrain width of all components 
+    - Add "container.tsx" to "components" folder
+    - Create <div> with maximum width with prompt of {children}
+    - Add min-h-screen, flex-col for vertical flow
+        - remove "flex-col" from footer.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+9. Update metadata in layout.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+10. Make Header a client component (34:02)
