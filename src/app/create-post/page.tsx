@@ -1,4 +1,4 @@
-import { createPost } from "@/actions/actions";
+import { createPost } from "../../actions/actions";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default async function Page() {

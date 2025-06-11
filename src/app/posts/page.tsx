@@ -1,4 +1,4 @@
-import PostsList from "@/components/posts-list";
+import PostsList from "../../components/posts-list";
 import { Suspense } from "react";
 
 export default async function Page() {
