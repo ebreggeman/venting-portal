@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.6.2",
-    "@prisma/client": "^6.9.0",
     "@prisma/extension-accelerate": "2.0.0",
     "@types/node": "22.15.23",
     "dotenv": "16.5.0",
@@ -20,13 +19,14 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@prisma/client": "^6.11.1",
     "@types/node": "^20.19.0",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
-    "prisma": "6.8.2",
+    "prisma": "^6.11.1",
     "tailwindcss": "^3.4.1",
     "ts-node": "10.9.2",
     "typescript": "5.8.2"
