@@ -1,8 +1,7 @@
-import prisma from "../../../lib/db"; // Adjust path if needed
+import prisma from "../../../lib/db";
 import UpvoteButton from "../../../components/upvote-button";
 
 export default async function Page({ params }: { params: { id: string } }) {
-    // ...existing code...
     const post = await prisma.post.findUnique({
         where: { id: Number(params.id) },
     });
