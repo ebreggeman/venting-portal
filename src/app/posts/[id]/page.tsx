@@ -1,11 +1,7 @@
 import prisma from "../../../lib/db"; // Adjust path if needed
 import UpvoteButton from "../../../components/upvote-button";
 
-type PageProps = {
-    params: { id: string }
-};
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: { id: string } }) {
     // ...existing code...
     const post = await prisma.post.findUnique({
         where: { id: Number(params.id) },
