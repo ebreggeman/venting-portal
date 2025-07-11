@@ -5,7 +5,7 @@ import prisma from "../lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export async function createPost(formData: FormData) {
-    const { isAuthenticated } = getKindeServerSession()
+    const { isAuthenticated } = getKindeServerSession();
     if (!(await isAuthenticated())) {
         redirect('api/auth/login');
     }
@@ -13,16 +13,18 @@ export async function createPost(formData: FormData) {
     const body = formData.get("body") as string;
     console.log(title, body);
 
-
     await prisma.post.create({
         data: {
             title,
             body,
         },
     });
-    //revalidate
+
+    // Revalidate posts page
     revalidatePath("/posts");
 
+    // Redirect to show success message
+    redirect("/create-post?success=true");
 }
 
 
