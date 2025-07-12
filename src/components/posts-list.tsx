@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import prisma from "../lib/db";
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 export default async function PostsList() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -10,9 +10,9 @@ export default async function PostsList() {
     return (
 
         <ul>
-            {posts.map((post: { id: Key | null | undefined; title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }) => (
+            {posts.map((post: { id: Key | null | undefined; title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
                 <li key={post.id} className="mb-3">
-                    <Link href={`/posts/${post.id}`}>{post.title}</Link>
+                    <Link href={`/posts/${post.id}`}>{String(post.title)}</Link>
                 </li>
             ))}
         </ul>
