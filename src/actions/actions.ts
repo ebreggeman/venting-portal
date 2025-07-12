@@ -11,9 +11,9 @@ export async function createPost(formData: FormData) {
     }
     const title = formData.get("title") as string;
     const body = formData.get("body") as string;
-    console.log(title, body);
 
-    await prisma.post.create({
+    // Create the post and get its ID
+    const post = await prisma.post.create({
         data: {
             title,
             body,
@@ -23,10 +23,6 @@ export async function createPost(formData: FormData) {
     // Revalidate posts page
     revalidatePath("/posts");
 
-    // Redirect to show success message
-    redirect("/create-post?success=true");
+    // Redirect to the new post's page
+    redirect(`/posts/${post.id}`);
 }
-
-
-
-
