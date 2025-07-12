@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import prisma from "src/lib/db";
+import prisma from "../lib/db";
 import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
 
 export default async function PostsList() {
