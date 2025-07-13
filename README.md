@@ -1,3 +1,6 @@
+Hi Sean! I have managed to deploy the first iteration of the Venting Portal via Vercel. I plan on adding some additional features, like letting users edit their posts, comment on others' posts, etc. Those are all a work in progress, as is my step-by-step guide for how I built it. Let me know if you have any features you'd like to see me add, or completely new project ideas for me to try out! 
+
+
 How I built this:
 
 1. Install Next.js in project in VS code
